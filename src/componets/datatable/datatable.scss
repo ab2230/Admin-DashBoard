@@ -1,0 +1,39 @@
+.datatable{
+    height: 600px;
+    padding: 20px;
+
+    .cellWithStatus{
+        padding: 5px;
+        border-radius: 5px;
+
+        &.active{
+            color: rgb(2, 255, 2);
+        }
+
+        &.passive{
+            color: rgb(255, 126, 126);
+        }            
+    }
+
+    .cellAction{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .viewButton{
+            padding: 2px 5px;
+            border-radius: 5px;
+            color:darkcyan;
+            border: 1px dotted rgba(0, 139, 139, 0.37);
+            cursor: pointer;
+        }
+
+        .deleteButton{
+            padding: 2px 5px;
+            border-radius: 5px;
+            color:crimson;
+            border: 1px dotted rgba(220, 20, 60, 0.315);
+            cursor: pointer;
+        }
+    }
+}
