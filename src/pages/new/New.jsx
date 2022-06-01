@@ -2,13 +2,11 @@ import './new.scss';
 import Sidebar from '../../componets/sidebar/Sidebar';
 import Navbar from '../../componets/navbar/Navbar';
 import { useState } from 'react';
-import axios from 'axios';
 
-const New = ({inputs,title}) => {
+const New = ({inputs,title,url}) => {
 
   const [file,setFile] = useState("");
   const [music,setMusic] = useState(null);
-  
   return (
     <div className='new'>
       <Sidebar />
@@ -31,7 +29,7 @@ const New = ({inputs,title}) => {
 
 
               <div className="right">
-                <form method='POST' action="http://localhost:8000/upload" encType='multipart/form-data'>
+                <form method='POST' action={url} encType='multipart/form-data'>
                  <div className="formInput">
                     <input type='file' id='photo' name='photo'  onChange={(e)=>setFile(e.target.files[0])} style={{display:'none'}}/>
                   </div>
@@ -47,10 +45,13 @@ const New = ({inputs,title}) => {
                     return(
                     <div className="formInput" key={input.id}>
                     <label>{input.label}</label>
-                    <input type={input.type} placeholder={input.placeholder}/>
+                    <input type={input.type} name={input.name} placeholder={input.placeholder}/>
                   </div>
                   )})}
 
+                      {
+                        inputs[0].label !== 'Music Name' ? <div className='formInput'><label>Description</label><textarea></textarea></div>: ''
+                      }
 
                   <button>Add</button>
                 </form>

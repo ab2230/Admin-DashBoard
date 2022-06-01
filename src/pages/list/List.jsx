@@ -3,13 +3,13 @@ import Navbar from "../../componets/navbar/Navbar"
 import Sidebar from '../../componets/sidebar/Sidebar'
 import Datatable from "../../componets/datatable/Datatable"
 
-function List() {
+function List({type}) {
   return (
     <div className='list'>
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
-        <Datatable/>
+        <Datatable type={type}/>
       </div>
     </div>
   )

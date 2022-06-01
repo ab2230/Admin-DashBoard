@@ -35,7 +35,7 @@ const Sidebar = () => {
               </li>
               </Link>
               <p className="title">LISTS</p>
-              <Link to="/listeners" style={{textDecoration:'none'}}>
+              <Link to="/data/listeners" style={{textDecoration:'none'}}>
               <li>
                 <PersonIcon className='icon'/>
                 <span>Listeners</span>
@@ -45,10 +45,12 @@ const Sidebar = () => {
                 <TheaterComedyIcon className='icon'/>
                 <span>Content Creators</span>
               </li>
+              <Link to='/data/musics' style={{textDecoration:'none'}}>
               <li>
                 <LibraryMusicIcon className='icon'/>
                 <span>Music</span>
               </li>
+              </Link>
               <li>
                 <PodcastsIcon className='icon'/>
                 <span>Podcast</span>
