@@ -45,25 +45,37 @@ const Sidebar = () => {
                 <TheaterComedyIcon className='icon'/>
                 <span>Content Creators</span>
               </li>
+              <Link to='/data/album' style={{textDecoration:'none'}}>
+              <li>
+                <LibraryMusicIcon className='icon'/>
+                <span>Album</span>
+              </li>
+              </Link>
               <Link to='/data/musics' style={{textDecoration:'none'}}>
               <li>
                 <LibraryMusicIcon className='icon'/>
                 <span>Music</span>
               </li>
               </Link>
+              <Link to='/data/podcasts' style={{textDecoration:'none'}}>
               <li>
                 <PodcastsIcon className='icon'/>
                 <span>Podcast</span>
               </li>
+              </Link>
+              <Link to='/data/audiobooks' style={{textDecoration:'none'}}>
               <li>
                 <AutoStoriesIcon className='icon'/>
                 <span>AudioBook</span>
               </li>
+              </Link>
               <p className="title">USEFUL</p>
+              <Link to='/admin/payment' style={{textDecoration:'none'}}>
               <li>
                 <PaidIcon className='icon'/>
                 <span>Make Payment</span>
               </li>
+              </Link>
               <li>
                 <DynamicFeedIcon className='icon'/>
                 <span>Stats</span>

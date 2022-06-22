@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: rgb(88, 83, 83);
+    color: darkorange;
 
     .wrapper{
         width:100%;
@@ -16,7 +16,7 @@
         .search{
             display: flex;
             align-items: center;
-            border: 0.5px solid lightgray;
+            border: 0.5px solid darkorange;
             padding:5px;
             input{
                 border: none;
@@ -49,7 +49,7 @@
                 .counter{
                     width: 15px;
                     height: 15px;
-                    background-color: red;
+                    background-color: darkorange;
                     border-radius: 50%;
                     color: white;
                     display: flex;

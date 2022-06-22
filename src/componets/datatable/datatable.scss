@@ -2,6 +2,26 @@
     height: 600px;
     padding: 20px;
 
+    .dataTableTitle{
+        width: 100%;
+        font-size: 25px;
+        color:gray;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        .link{
+            text-decoration: none;
+            color: darkgreen;
+            font-size: 15px;
+            font-weight: 400;
+            border: 1px solid darkgreen;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
     .cellWithStatus{
         padding: 5px;
         border-radius: 5px;

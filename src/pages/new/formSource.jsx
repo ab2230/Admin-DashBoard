@@ -26,6 +26,13 @@ export const musicInputs = [
         type:'text',
         placeholder:'',
         name:'phoneNumber'
+    },
+    {
+        id:5,
+        label:'Music Length',
+        type:'text',
+        placeholder:'',
+        name:'musicLength'
     }
 ]
 
@@ -72,21 +79,61 @@ export const audioBooksInputs = [
         id:2,
         label:'Author Name',
         type:'text',
-        placeholder:'podcaster name',
+        placeholder:'author name',
         name:'authorName'
     },
     {
         id:3,
+        label:'Narrator Name',
+        type:'text',
+        placeholder:'narrator name',
+        name:'narratorName'
+    },
+    {
+        id:4,
         label:'Email',
         type:'email',
         placeholder:'email',
         name:'email'
     },
     {
-        id:4,
+        id:5,
         label:'Phone Number',
         type:'text',
         placeholder:'',
         name:'phoneNumber'
     }
-]
+];
+
+export const albumInputs = [
+    {
+        id:1,
+        label:'Album Name',
+        type:'text',
+        placeholder:'album name',
+        name:'albumName'
+    },
+    {
+        id:2,
+        label:'Artist Name',
+        type:'text',
+        placeholder:'artist name',
+        name:'artistName'
+    },
+    {
+        id:4,
+        label:'Email',
+        type:'email',
+        placeholder:'email',
+        name:'email'
+    },
+    {
+        id:5,
+        label:'Phone Number',
+        type:'text',
+        placeholder:'',
+        name:'phoneNumber'
+    }
+];
+
+

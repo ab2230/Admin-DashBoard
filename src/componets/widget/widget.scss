@@ -4,7 +4,7 @@
     justify-content: space-between;
     padding: 10px;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47); 
-    box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    box-shadow: 2px 4px 10px 1px darkorange;
     border-radius: 10px;
     height:100px;
 
@@ -16,7 +16,7 @@
         .title{
             font-weight:bold;
             font-size: 15;
-            color: rgb(194, 189, 189);  
+            color: darkorange;  
         }
 
         .counter{
@@ -27,7 +27,7 @@
         .link{
             width: max-content;
             font-size: 12px;
-            border-bottom: 1px solid gray;
+            border-bottom: 1px solid darkorange;
         }
 
         .numberOf{
@@ -39,7 +39,7 @@
         .icon{
             font-size: 20px;
             padding: 5px;
-            background-color: lightblue;
+            background-color: darkorange;
             border-radius: 5px;
             align-self: flex-end;
         }
