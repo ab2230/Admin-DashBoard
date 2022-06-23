@@ -1,19 +1,24 @@
 
 
 export const columnsForMusics = [
-  { field: '_id', headerName: 'ID', width: 70 },
-  { field: 'title', headerName: 'Music Name', width: 230 },
-  { field: 'artist_name', headerName: 'Artist Name', width: 200},
-  { field: 'email', headerName: 'Email', width: 230},
-  { field: 'cell', headerName: 'Phone Number', width: 200}
+  { id: '_id', label: 'ID', minWidth: 10 },
+  { id: 'title', label: 'Title', minWidth: 10 },
+  { id: 'artist_name', label: 'Artist Name', minWidth: 10 },
+  { id: 'email', label: 'Email', minWidth: 10 },
+  { id: 'cell', label: 'Phone Number', minWidth: 10 },
+  { id: 'edit', label: '', minWidth: 10 },
+  { id: 'del', label: '', minWidth: 10 },
 ];
 
 export const columnsForAlbum = [
-  { field: '_id', headerName: 'ID', width: 70 },
-  { field: 'album_title', headerName: 'Album Name', width: 230 },
-  { field: 'artist_name', headerName: 'Artist Name', width: 200},
-  { field: 'email', headerName: 'Email', width: 230},
-  { field: 'cell', headerName: 'Phone Number', width: 200}
+  { id: '_id', label: 'ID',  minWidth: 10 },
+  { id: 'album_title', label: 'Album Name',  minWidth: 10},
+  { id: 'artist_name', label: 'Artist Name',  minWidth: 10},
+  { id: 'album_description', label: 'Description',  minWidth: 10},
+  { id: 'email', label: 'Email',  minWidth: 10},
+  { id: 'cell', label: 'Phone Number',  minWidth: 10},
+  { id: 'edit', label: '', minWidth: 10 },
+  { id: 'del', label: '', minWidth: 10 },
 ];
 
 
@@ -31,20 +36,26 @@ export const columns = [
 
 
 export const columnsForPodcasts = [
-  { field: '_id', headerName: 'ID', width: 70 },
-  { field: 'title', headerName: 'Podcast Name', width: 230 },
-  { field: 'podcasters', headerName: 'Podcasters   Name', width: 200},
-  { field: 'email', headerName: 'Email', width: 230},
-  { field: 'cell', headerName: 'Phone Number', width: 200}
+  { id: '_id', label: 'ID', minwidth: 10 },
+  { id: 'title', label: 'Podcast Name', minwidth: 10 },
+  { id: 'podcasters', label: 'Podcasters Name', minwidth: 10},
+  { id: 'description', label: 'Description',  minWidth: 10},
+  { id: 'email', label: 'Email', width: 10},
+  { id: 'cell', label: 'Phone Number', minwidth: 10},
+  { id: 'edit', label: '', minWidth: 10 },
+  { id: 'del', label: '', minWidth: 10 },
 ];
 
 export const columnsForAudiobooks = [
-  { field: '_id', headerName: 'ID', width: 70 },
-  { field: 'title', headerName: 'Book Name', width: 230 },
-  { field: 'author_name', headerName: 'Author Name', width: 200},
-  { field: 'narrator_name', headerName: 'Narrator Name', width: 200},
-  { field: 'email', headerName: 'Email', width: 230},
-  { field: 'cell', headerName: 'Phone Number', width: 200}
+  { id: '_id', label: 'ID', minwidth: 10 },
+  { id: 'title', label: 'Book Name', minwidth: 10 },
+  { id: 'author_name', label: 'Author Name', minwidth: 10},
+  { id: 'narrator_name', label: 'Narrator Name', minwidth: 10},
+  { id: 'description', label: 'Description',  minWidth: 10},
+  { id: 'email', label: 'Email', minwidth: 10},
+  { id: 'cell', label: 'Phone Number', minwidth: 10},
+  { id: 'edit', label: '', minWidth: 10 },
+  { id: 'del', label: '', minWidth: 10 },
 ];
 
 export const rows = [

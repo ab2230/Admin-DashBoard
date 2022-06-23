@@ -3,10 +3,12 @@
     flex: 1;
     justify-content: space-between;
     padding: 10px;
+    height: 20vh;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47); 
-    box-shadow: 2px 4px 10px 1px darkorange;
+    box-shadow: 2px 4px 10px 1px rgb(53, 52, 53);
     border-radius: 10px;
-    height:100px;
+    
+    
 
     .left,.right{
         display:flex;
@@ -16,7 +18,7 @@
         .title{
             font-weight:bold;
             font-size: 15;
-            color: darkorange;  
+            color: rgb(19, 27, 27);  
         }
 
         .counter{
@@ -27,7 +29,7 @@
         .link{
             width: max-content;
             font-size: 12px;
-            border-bottom: 1px solid darkorange;
+            border-bottom: 1px solid rgb(255, 246, 234);
         }
 
         .numberOf{
@@ -39,9 +41,14 @@
         .icon{
             font-size: 20px;
             padding: 5px;
-            background-color: darkorange;
+            background-color: rgb(255, 154, 255);
             border-radius: 5px;
             align-self: flex-end;
         }
     }
+}
+.widget:hover {
+    color:rgb(0, 0, 0);
+    background: rgb(212, 212, 212);
+    transition-delay: 100ms;
 }

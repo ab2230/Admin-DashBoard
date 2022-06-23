@@ -17,6 +17,7 @@ import BookCollectionForm from './pages/new/BookCollectionForm'
 import AlbumForm from './pages/new/AlbumForm'
 import Payment from './pages/payment/Payment'
 import StripeDisplayer from './pages/payment/StripeDisplayer'
+import MusicUpdater from './pages/single/MusicUpdater'
 
 function App() {
 
@@ -49,6 +50,9 @@ function App() {
             <Route path='newAlbum' element={<AlbumForm  inputs={albumInputs} title="Add New Album" url="http://localhost:8000/album/upload"/>}/>
             <Route path='newPodcast' element={<ForCollection inputs={podcastInputs} title="Add New Podcast" url="http://localhost:8000/podcast/upload"/>}/>
             <Route path='newAudiobook' element={<BookCollectionForm inputs={audioBooksInputs} title="Add New Audiobooks" url="http://localhost:8000/audiobook/upload"/>}/>
+            <Route path='editMusic'>
+            <Route path=':musicId' element={<MusicUpdater inputs={musicInputs} title="Update Music" url="http://localhost:8000/music/"/>}/>
+            </Route> 
           </Route>
         </Route>
       </Routes>

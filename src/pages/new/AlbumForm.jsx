@@ -9,14 +9,16 @@ import axios from 'axios';
 const AlbumForm = ({inputs,title,url}) => {
 
   const [file,setFile] = useState("");
-  const [formValues,setFormValues] = useState([{ file:"", trackName: "", trackLength : "", description2:""}])
+  const [lyrics,setLyrics] = useState("");
+  const [formValues,setFormValues] = useState([{ file:"", trackName: "", trackLength : "", description2:"",lyrics:''}])
   
   const navigate = useNavigate();
   const handleSubmit=()=>{
     var form = document.querySelector('form');
     var data = new FormData(form);
     axios.post(url,data)
-    navigate('/data/album');
+    alert("Album is uploaded successfully")
+    navigate('/');
   }
 
   let handleChange = (i, e) => {
@@ -27,7 +29,7 @@ const AlbumForm = ({inputs,title,url}) => {
     }
   
   let addFormFields = () => {
-      setFormValues([...formValues, { file:"", trackName: "", trackLength : "",description2:""}])
+      setFormValues([...formValues, { file:"", trackName: "", trackLength : "",description2:"", lyrics:''}])
     }
   
   let removeFormFields = (i) => {
@@ -37,6 +39,13 @@ const AlbumForm = ({inputs,title,url}) => {
   }
 
   let handleChangeForMusic = (index,e)=>{
+    let newFormValues = [...formValues];
+    newFormValues[index][e.target.name] = e.target.files[0];
+    console.log(newFormValues);
+    setFormValues(newFormValues);
+  }
+
+  let handleChangeForLyrics = (index,e)=>{
     let newFormValues = [...formValues];
     newFormValues[index][e.target.name] = e.target.files[0];
     console.log(newFormValues);
@@ -126,6 +135,12 @@ const AlbumForm = ({inputs,title,url}) => {
                   <div className="formInput">
                     <label>Description</label>
                     <input type='text' name='description2' placeholder="description" value={formValue.description2 ||''} onChange={e => handleChange(index, e)} />
+                  </div>
+
+                  <div className="formInput">
+                  <label>Upload lyrics
+                  </label>
+                    <input type='file' id='lyrics' name='lyrics' multiple onChange={(e)=>handleChangeForLyrics(index,e)} />
                   </div>
 
               {

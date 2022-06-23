@@ -4,9 +4,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import PodcastsIcon from '@mui/icons-material/Podcasts';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import SettingsIcon from '@mui/icons-material/Settings';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
@@ -76,17 +74,10 @@ const Sidebar = () => {
                 <span>Make Payment</span>
               </li>
               </Link>
-              <li>
-                <DynamicFeedIcon className='icon'/>
-                <span>Stats</span>
-              </li>
-              <li>
+              <li> <a href="https://docs.google.com/forms/d/1jpURjSKPFRwZijbub0f8hWfdlp5n4I2q1fNRa3JFVZY/edit#responses">
                 <NotificationsIcon className='icon'/>
                 <span>Notification</span>
-              </li>
-              <li>
-                <SettingsIcon className='icon'/>
-                <span>Settings</span>
+                </a>
               </li>
               <p className="title">ADMIN</p>
               <li>

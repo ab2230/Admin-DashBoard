@@ -15,7 +15,8 @@ const ForCollection = ({inputs,title,url}) => {
     var form = document.querySelector('form');
     var data = new FormData(form);
     axios.post(url,data);
-    navigate('/data/podcasts');
+    alert("Podcast is uploaded successfully")
+    navigate('/');
   }
 
   

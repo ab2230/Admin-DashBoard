@@ -1,22 +1,38 @@
-import './new.scss';
+import React from 'react'
+import './musicUpdater.scss'
 import Sidebar from '../../componets/sidebar/Sidebar';
 import Navbar from '../../componets/navbar/Navbar';
-import { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useState , useEffect} from 'react';
+import {useNavigate, useLocation} from 'react-router-dom'
 import axios from 'axios';
+import { PanoramaSharp } from '@mui/icons-material';
 
-const New = ({inputs,title,url}) => {
-
+const MusicUpdater = ({inputs,title,url}) => {
   const [file,setFile] = useState("");
   const [music,setMusic] = useState(null);
+  const [row, setRow] = useState([]);
   const [lyrics,setLyrics] = useState(null);
+  const url2='http://localhost:8000/';
   const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+          const res = await axios.get(url2+'music/'+location.pathname.split("/")[3]);
+          setRow(res.data)
 
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getData();
+  }, []);
+  console.log(row);
   const handleSubmit=()=>{
     var form = document.querySelector('form');
     var data = new FormData(form);
-    axios.post(url,data);
-    alert("Music is uploaded successfully")
+    axios.put(url+location.pathname.split("/")[3],data);
+      
     navigate('/');
     
 
@@ -36,14 +52,14 @@ const New = ({inputs,title,url}) => {
                   <label htmlFor='photo'>
                   <img src={
                     file?URL.createObjectURL(file)
-                    :"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"} 
+                    :'http://192.168.85.229:8000'+row.image} 
                     alt=""/>
                   </label>
               </div>
 
 
               <div className="right">
-                <form method='POST' onSubmit={handleSubmit} action={url} encType='multipart/form-data'>
+                <form method='PUT' onSubmit={handleSubmit} action={url+location.pathname.split("/")[3]} encType='multipart/form-data'>
                  <div className="formInput">
                     <input type='file' id='photo' name='photo'  onChange={(e)=>setFile(e.target.files[0])} style={{display:'none'}}/>
                   </div>
@@ -53,18 +69,35 @@ const New = ({inputs,title,url}) => {
                   </label>
                     <input type='file' id='music' name='file' onChange={(e)=>setMusic(e.target.files[0])} style={{display:'none'}}/>
                     <div className='list-of-selected'>
-                            {music!==null?music.name:''}
+                            {music!==null?music.name:row.path}
                     </div>
                   </div>
 
 
-                  {inputs.map((input)=>{
-                    return(
-                    <div className="formInput" key={input.id}>
-                    <label>{input.label}</label>
-                    <input type={input.type} name={input.name} placeholder={input.placeholder}/>
+                    <div className="formInput">
+                    <label>Music Name</label>
+                    <input type='text' name='musicName' defaultValue={row.title}  placeholder='music name'/>
                   </div>
-                  )})}
+
+                  <div className="formInput">
+                    <label>Artist Name</label>
+                    <input type='text' name='artistName' defaultValue={row.artist_name}  placeholder='artist name'/>
+                  </div>
+
+                  <div className="formInput">
+                    <label>Email</label>
+                    <input type='email' name='email' defaultValue={row.email}  placeholder='email'/>
+                  </div>
+
+                  <div className="formInput">
+                    <label>Phone Number</label>
+                    <input type='text' name='phoneNumber' defaultValue={row.cell}  placeholder=''/>
+                  </div>
+
+                  <div className="formInput">
+                    <label>Music Length</label>
+                    <input type='text' name='musicLength' defaultValue={row.music_length}  placeholder=''/>
+                  </div>
 
                     <label>Category</label>
                      <select name="category" multiple>
@@ -85,13 +118,13 @@ const New = ({inputs,title,url}) => {
                          <option>Zemenawi</option>
                          <option>Traditional</option>
                      </select>
-                  <div className="formInput">
+                     <div className="formInput">
                   <label htmlFor='lyrics'>
                   <img src={'http://192.168.85.229:8000/images/'+'lyricsImg.png'} alt=""/>
                   </label>
                     <input type='file' id='lyrics' name='lyrics' onChange={(e)=>setLyrics(e.target.files[0])} style={{display:'none'}}/>
                     <div className='list-of-selected'>
-                            {lyrics!==null?lyrics.name:''}
+                            {lyrics!==null?lyrics.name:row.lyricsPath}
                     </div>
                   </div>
                   <button>Add</button>
@@ -103,4 +136,4 @@ const New = ({inputs,title,url}) => {
   )
 }
 
-export default New
+export default MusicUpdater

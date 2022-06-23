@@ -18,10 +18,6 @@ const Home = () => {
          <Widget type='audiobook'/>
          <Widget type='creator'/>
        </div>
-       <div className='charts'>
-         <Featured/>
-         <Chart aspect={2/1} title='Number of listeners'/>
-       </div>
         </div>
     </div>
   )

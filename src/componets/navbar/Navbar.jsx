@@ -26,17 +26,7 @@ const Navbar = () => {
             <DarkModeIcon className='icon' onClick={()=>dispatch({type:"TOGGLE"})}/>
         </div>
         <div className="item">
-            <FullscreenExitIcon className='icon'/>
-        </div>
-        <div className="item">
-            <NotificationsNoneIcon className='icon'/>
-            <div className="counter">1</div>
-        </div>
-        <div className="item">
-            <ListIcon className='icon'/>
-        </div>
-        <div className="item">
-           <img src="./awede.jpg" className='avatar'alt=""/>
+           <img src={'http://192.168.85.229:8000/images/'+'awede.jpg'} className='avatar'alt=""/>
         </div>
       </div>
       </div>

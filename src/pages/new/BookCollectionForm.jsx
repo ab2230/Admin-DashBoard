@@ -15,7 +15,8 @@ const BookCollectionForm = ({inputs,title,url}) => {
     var form = document.querySelector('form');
     var data = new FormData(form);
      axios.post(url,data);
-    navigate('/data/audiobooks');
+     alert("Audiobook is uploaded successfully")
+    navigate('/');
   }
 
   let handleChange = (i, e) => {

@@ -15,11 +15,11 @@ const Payment = () => {
             <div className='images'>
                     <div className='left'> 
                       <Link to='/admin/stripePay'> 
-                      <img src={'http://192.168.167.229:8000/images/'+'stripe.png'}/>
+                      <img src={'http://192.168.85.229:8000/images/'+'stripe.png'}/>
                       </Link>  
                     </div>
                     <div onClick={() => window.open( 'http://localhost:8000/yenepay')} className='right'>
-                    <img src={'http://192.168.167.229:8000/images/'+'ynePay.png'}/>
+                    <img src={'http://192.168.85.229:8000/images/'+'ynePay.png'}/>
                     </div>
             </div>
       </div>

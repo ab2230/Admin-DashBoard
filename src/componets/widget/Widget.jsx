@@ -5,9 +5,34 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import PodcastsIcon from '@mui/icons-material/Podcasts';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import { useEffect , useState} from 'react';
+import axios from 'axios'
+import { Link,useNavigate} from 'react-router-dom';
+
 
 const Widget = ({type}) => {
+  const url='http://localhost:8000/'
+  const [number, setNumber] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        if(type!=='listener'){
+          const res = await axios.get(url+type);
+          setNumber(res.data)
+       
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getData();
+  }, [type]);
 
+  const handleClick = ()=>{
+    navigate('/data/'+type+'s')
+  }
+   
   let data;
    switch(type){
      case 'user':
@@ -59,10 +84,12 @@ const Widget = ({type}) => {
        break;
    }
   return (
-    <div className='widget'>
+   
+    <div className='widget' onClick={handleClick}>
+       
       <div className="left">
           <span className="title">{data.title}</span>
-          <span className="counter">12345</span>
+          <span className="counter">{number.length}</span>
           <span className='link'>{data.link}</span>
       </div>
       <div className="right">
@@ -72,6 +99,7 @@ const Widget = ({type}) => {
             </div>
             {data.icon}
         </div>
+       
     </div>
   )
 }
